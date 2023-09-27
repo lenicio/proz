@@ -28,8 +28,19 @@ while True:
             "genero": input("Informe o genero do livro: ")
         }
 
-        lista_cadastro.append(cadastro)
-        print("\n\nLivro cadastrado com sucesso!")
+        livro_cadastrado = False
+
+        for item in lista_cadastro:
+            if item['isbn'] == cadastro['isbn']:
+                livro_cadastrado = True
+                break
+
+        if livro_cadastrado:
+            print("\n\nLivro já cadastrado!")
+        else:
+            lista_cadastro.append(cadastro)
+            print("\n\nLivro cadastrado com sucesso!")
+
 
     elif opcao == "2":
         for item in lista_cadastro:
