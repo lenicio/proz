@@ -1,23 +1,21 @@
+//
+
 import java.util.Scanner;
 
-public class Listas {
+public class MediaLista {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] numeros = new int[3];
-        int maiorNumero;
+        double totalSoma = 0;
 
         for (int i = 0; i < numeros.length; i++) {
             System.out.printf("Informe um número para posição %d do array: ", i);
             numeros[i] = sc.nextInt();
         }
 
-        maiorNumero = numeros[0];
-
         for (int numero : numeros) {
-            if (numero > maiorNumero) {
-                maiorNumero = numero;
-            }
+            totalSoma += numero;
         }
-        System.out.printf("%n%nO maior número é: %d", maiorNumero);
+        System.out.printf("%n%nA média é: %f", totalSoma / numeros.length);
     }
 }
